@@ -95,10 +95,14 @@ define UPDATE_DEFCONFIG
 endef
 
 define INIT_BUILDROOT
-		rm -f .toolchain-ready
-        @if [ ! -d buildroot/.git ]; then \
-                echo "Initializing Git submodule 'buildroot'"; \
-                git submodule init; \
-                git submodule update; \
-        fi
+	rm -f .toolchain-ready
+	@if [ ! -d buildroot/.git ]; then \
+		echo "Initializing Git submodule 'buildroot'"; \
+		git submodule init; \
+		git submodule update; \
+	fi
+	@if [ ! -f patch_buildroot/nodejs.patch.applied ]; then \
+		patch buildroot/package/nodejs/nodejs.mk < patch_buildroot/nodejs.patch; \
+		touch patch_buildroot/nodejs.patch.applied; \
+	fi
 endef

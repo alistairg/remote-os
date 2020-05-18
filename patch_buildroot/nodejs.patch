@@ -1,0 +1,11 @@
+--- buildroot/package/nodejs/nodejs.mk.bak	2020-05-18 21:05:33.895320225 +0200
++++ buildroot/package/nodejs/nodejs.mk	2020-05-18 21:06:43.672683813 +0200
+@@ -64,8 +64,6 @@
+ 		--shared-openssl-includes=$(HOST_DIR)/include/openssl \
+ 		--shared-openssl-libpath=$(HOST_DIR)/lib \
+ 		--shared-zlib \
+-		--shared-zlib-includes=$(HOST_ZLIB_SRCDIR) \
+-		--shared-zlib-libpath=$(HOST_DIR)/lib \
+ 		--no-cross-compiling \
+ 		--with-intl=small-icu \
+ 	)

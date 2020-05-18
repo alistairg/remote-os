@@ -73,7 +73,6 @@ $RECYCLE.BIN/
 /.config
 *.depend
 *.o
-/*.patch
 /*.diff
 *.orig
 *.rej
@@ -84,3 +83,4 @@ $RECYCLE.BIN/
 *.log
 .toolchain-ready
 rpi0/.*.swp
+*.patch.applied
